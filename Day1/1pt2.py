@@ -15,18 +15,32 @@ found1 = False
 found2 = False
 
 """
-
 lines = [
-    "1abc2"
-    "pqr3stu8vwx"
-    "a1b2c3d4e5f"
-    "treb7uchet"
+    "two1nine",
+    "eightwothree",
+    "abcone2threexyz",
+    "xtwone3four",
+    "4nineeightseven2",
+    "zoneight234",
+    "7pqrstsixteen",
 ]
-
 """
 
 for line in lines:
-    splitlines = list(line)   
+    
+    line = (
+        line.replace("one", "one1one")
+        .replace("two", "two2two")
+        .replace("three", "three3three")
+        .replace("four", "four4four")
+        .replace("five", "five5five")
+        .replace("six", "six6six")
+        .replace("seven", "seven7seven")
+        .replace("eight", "eight8eight")
+        .replace("nine", "nine9nine")
+    )
+
+    splitlines = list(line)  
     x = 0
     y = len(splitlines) - 1
 
