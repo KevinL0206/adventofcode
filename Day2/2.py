@@ -1,23 +1,3 @@
-"""
-
-Game 1: 1 red, 5 blue, 1 green; 16 blue, 3 red; 6 blue, 5 red; 4 red, 7 blue, 1 green
-
-split by colon to get [[Game 1] , [1 red, 5 blue, 1 green; 16 blue, 3 red; 6 blue, 5 red; 4 red, 7 blue, 1 green]]
-
-split Game 1 to get Game ID = 1
-
-split [1 red, 5 blue, 1 green; 16 blue, 3 red; 6 blue, 5 red; 4 red, 7 blue, 1 green] by ; 
-to get [[1 red, 5 blue, 1 green],[16 blue, 3 red], [6 blue, 5 red],[4 red, 7 blue],[1 green]]
-
-split each item by comma eg
-[[1 red], [5 blue], [1 green]]
-
-split by space
-
-if red/green/blue
-
-split again
-"""
 
 # Specify the path to your text file
 file_path = 'Day2/input.txt'
