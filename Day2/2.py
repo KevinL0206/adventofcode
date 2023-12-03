@@ -43,11 +43,16 @@ red_tot = 0
 blue_tot = 0
 green_tot = 0
 sum = 0
+power_sum = 0
 
 for line in lines:
     #Game 1: 1 red, 5 blue, 1 green; 16 blue, 3 red; 6 blue, 5 red; 4 red, 7 blue, 1 green. 
     #Split by colon to get [[Game 1] , [1 red, 5 blue, 1 green; 16 blue, 3 red; 6 blue, 5 red; 4 red, 7 blue, 1 green]]
     #split Game 1 to get Game ID = 1
+
+    red_temp = 0
+    blue_temp = 0
+    green_temp = 0
 
     initial_split = line.split(":")
     game_split = initial_split[0].split()
@@ -72,9 +77,15 @@ for line in lines:
 
             if quant_col[1] == "red":
                 red_tot += int(quantity)
+                if int(quantity) > red_temp:
+                    red_temp = int(quantity)
             elif quant_col[1] == "blue":
                 blue_tot += int(quantity)
+                if int(quantity) > blue_temp:
+                    blue_temp = int(quantity)
             elif quant_col[1] == "green":
+                if int(quantity) > green_temp:
+                    green_temp = int(quantity)
                 green_tot += int(quantity)
 
         if red_tot > 12 or blue_tot > 14 or green_tot > 13:
@@ -84,10 +95,15 @@ for line in lines:
         blue_tot = 0
         green_tot = 0
 
+    power = red_temp * blue_temp * green_temp
+
+    power_sum += power
+
     if valid:
         sum += int(game_id)
     
 
 
 print(sum)
+print(power_sum)
     
